@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item android:title="Communicate">
+            <menu>
+                <item
+                    android:id="@+id/communicate"
+                    android:title="     Communicate" />
+            </menu>
+        </item>
+
+        <item android:title="Local/Group">
+            <menu>
+                <item
+                    android:id="@+id/my_local"
+                    android:title="     My Local" />
+                <item
+                    android:id="@+id/my_group"
+                    android:title="     My Group" />
+            </menu>
+        </item>
+
+        <item android:title="Information">
+            <menu>
+                <item
+                    android:id="@+id/my_info"
+                    android:title="     My Information" />
+                <item
+                    android:id="@+id/group_info"
+                    android:title="     Group's Information" />
+            </menu>
+        </item>
+
+        <item android:title="Settings">
+            <menu>
+                <item
+                    android:id="@+id/setting"
+                    android:title="     Setting" />
+                <item
+                    android:id="@+id/logout"
+                    android:title="     Logout" />
+            </menu>
+        </item>
+
+    </group>
+
+</menu>
