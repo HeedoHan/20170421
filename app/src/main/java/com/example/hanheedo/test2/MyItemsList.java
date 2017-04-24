@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.widget.SearchView;
 import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -30,6 +31,24 @@ public class MyItemsList extends AppCompatActivity
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         Log.d("tag","debugging message");
+
+        toolbar.inflateMenu(R.menu.my_items_list);
+
+        SearchView mSearchView;
+
+        mSearchView = (SearchView) toolbar.getMenu().findItem(R.id.menu_search).getActionView();
+        mSearchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String s) {
+                return false;
+            }
+            @Override
+            public boolean onQueryTextChange(String s) {
+                return false;
+            }
+        });
+
+
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.add);
         Log.d("tag","debugging message");
@@ -109,7 +128,7 @@ public class MyItemsList extends AppCompatActivity
 
             return true;
         }
-        else if (id==R.id.SearchView) {
+        else if (id==R.id.menu_search) {
             //
 
             return true;

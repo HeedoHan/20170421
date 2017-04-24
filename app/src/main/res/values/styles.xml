@@ -12,6 +12,7 @@
         <item name="android:windowBackground">@drawable/image_03</item>
     </style>
 
+    <!-- 툴바 테마 -->
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
