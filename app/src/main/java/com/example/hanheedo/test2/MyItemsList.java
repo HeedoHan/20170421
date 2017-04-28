@@ -49,7 +49,6 @@ public class MyItemsList extends AppCompatActivity
         });
 
 
-
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.add);
         Log.d("tag","debugging message");
         fab.setOnClickListener(new View.OnClickListener() {
@@ -145,6 +144,8 @@ public class MyItemsList extends AppCompatActivity
 
         if (id == R.id.communicate) {
             // Handle the communicate action
+
+
         } else if (id == R.id.my_local) {
 
         } else if (id == R.id.my_group) {

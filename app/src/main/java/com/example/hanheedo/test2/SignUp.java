@@ -2,11 +2,13 @@ package com.example.hanheedo.test2;
 
 import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 
@@ -16,6 +18,9 @@ import android.widget.LinearLayout;
 
 public class SignUp extends AppCompatActivity
 {
+    EditText ID, NAME, PW, REPW;
+    String Tid, Tname, Tpw, Trepw;
+
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
@@ -44,7 +49,7 @@ public class SignUp extends AppCompatActivity
             }
         });
 
-        final EditText Password = (EditText) findViewById(R.id.Password); //password
+        final EditText Password = (EditText) findViewById(R.id.Password); //Password
         Password.setOnKeyListener(new View.OnKeyListener() {
             @Override
             public boolean onKey(View v, int keyCode, KeyEvent event) {
@@ -55,7 +60,7 @@ public class SignUp extends AppCompatActivity
             }
         });
 
-        LinearLayout MainLayout2 = (LinearLayout) findViewById(R.id.signup); //password
+        LinearLayout MainLayout2 = (LinearLayout) findViewById(R.id.signup); //Password
         MainLayout2.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -64,7 +69,7 @@ public class SignUp extends AppCompatActivity
             }
         });
 
-        final EditText Name = (EditText) findViewById(R.id.Name); //name
+        final EditText Name = (EditText) findViewById(R.id.Name); //Name
         Name.setOnKeyListener(new View.OnKeyListener() {
             @Override
             public boolean onKey(View v, int keyCode, KeyEvent event) {
@@ -75,7 +80,7 @@ public class SignUp extends AppCompatActivity
             }
         });
 
-        LinearLayout MainLayout3 = (LinearLayout) findViewById(R.id.signup); //name
+        LinearLayout MainLayout3 = (LinearLayout) findViewById(R.id.signup); //Name
         MainLayout3.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {

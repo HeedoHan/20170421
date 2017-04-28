@@ -39,6 +39,7 @@
         <activity android:name=".MyItemsList"></activity>
         <activity android:name=".AddItem"></activity>
         <activity android:name=".SignUp"></activity>
+        <activity android:name=".RegistInfo"></activity>
 
     </application>
 

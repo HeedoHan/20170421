@@ -13,14 +13,20 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.util.Log;
+import com.facebook.FacebookSdk;
 
 
 public class LoginActivity extends AppCompatActivity
 {
+    EditText IdInput, PasswordInput;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        IdInput = (EditText) findViewById(R.id.edit_id);
+        PasswordInput = (EditText) findViewById(R.id.edit_password);
 
         final EditText editId = (EditText) findViewById(R.id.edit_id); //Id
         editId.setOnKeyListener(new View.OnKeyListener() {
@@ -61,8 +67,9 @@ public class LoginActivity extends AppCompatActivity
                 imm.hideSoftInputFromWindow(editPassword.getWindowToken(),0);
             }
         });
-    }
 
+
+    }
 
     public void loginClick(View view) // Login Button Click
     {
