@@ -148,6 +148,9 @@ public class SignUp extends AppCompatActivity
                 imm.hideSoftInputFromWindow(GroupName.getWindowToken(),0);
             }
         });
+
+
+
     }
 
     public void CancelClick(View view)
@@ -155,5 +158,5 @@ public class SignUp extends AppCompatActivity
         finish();
     }
 
-//    public void SignupClick(View view) { }
+    //public void SignupClick(View view) { }
 }

@@ -59,7 +59,6 @@ public class RegistInfo extends AppCompatActivity {
 
             }
         } catch (Exception e) {
-
             e.printStackTrace();
         }
     }
@@ -74,13 +73,11 @@ public class RegistInfo extends AppCompatActivity {
         }
 
         @Override
-        public void onCreate(SQLiteDatabase database) {
-        }
+        public void onCreate(SQLiteDatabase database) { }
 
         @Override
-        public void onUpgrade(SQLiteDatabase database, int oldVersion, int newVersion) {
+        public void onUpgrade(SQLiteDatabase database, int oldVersion, int newVersion) { }
 
-        }
         }
     }
 
