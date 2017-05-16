@@ -37,9 +37,6 @@ import java.net.URLEncoder;
 public class SignUp extends AppCompatActivity {
     private EditText ID, NAME, PW, REPW, PNUM, GNAME;
     ArrayAdapter<CharSequence> spinner1, spinner2;
-    final Spinner spin1 = (Spinner) findViewById(R.id.local_spinner1);
-    final Spinner spin2 = (Spinner) findViewById(R.id.local_spinner2);
-
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,6 +56,9 @@ public class SignUp extends AppCompatActivity {
         REPW = (EditText) findViewById(R.id.Password_confirm);
         PNUM = (EditText) findViewById(R.id.Phone_number);
         GNAME = (EditText) findViewById(R.id.custom_Group);
+
+        final Spinner spin1 = (Spinner) findViewById(R.id.local_spinner1);
+        final Spinner spin2 = (Spinner) findViewById(R.id.local_spinner2);
 
         spinner1 = ArrayAdapter.createFromResource(SignUp.this, R.array.spinner_SD, R.layout.spinnerlayout);
         spin1.setAdapter(spinner1);
