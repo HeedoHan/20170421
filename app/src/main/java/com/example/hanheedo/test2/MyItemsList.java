@@ -19,8 +19,9 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import java.util.ArrayList;
 
-public class MyItemsList extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+public class MyItemsList extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+
+    private FloatingActionButton fab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,11 +29,20 @@ public class MyItemsList extends AppCompatActivity
         setContentView(R.layout.myitemslist);
         Log.d("tag","debugging message");
 
+        /////////////////////////////////////////////////////////
+
+        Intent intent = getIntent();
+        String data = intent.getStringExtra("Login_List");
+        Log.d("tag","debugging message");
+
+        //////////////////////////////////////////////////////////
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         Log.d("tag","debugging message");
 
         toolbar.inflateMenu(R.menu.my_items_list);
+
+        ///////////////////////////////////////////////////////////
 
         SearchView mSearchView;
 
@@ -48,34 +58,44 @@ public class MyItemsList extends AppCompatActivity
             }
         });
 
+        /////////////////////////////////////////////////////////////////////////////
+
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.add);
         Log.d("tag","debugging message");
+
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Log.d("tag","debugging message");
+            public void onClick(View v) {
                 Intent intent = new Intent(MyItemsList.this, AddItem.class);
-                intent.putExtra("List_Add","data_3");
                 Log.d("tag","debugging message");
+                intent.putExtra("Login_Add","data_3"); // "DataKey" , "Data"
                 startActivity(intent);
+                Log.d("tag","debugging message");
             }
         });
-        Log.d("tag","debugging message");
+
+        /////////////////////////////////////////////////////////////////////////////
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         Log.d("tag","debugging message");
+
+        ////////////////////////////////////////////////////////////////////////////////
+
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
         Log.d("tag","debugging message");
 
+        //////////////////////////////////////////////////////////////////////////////////////////////
+
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         Log.d("tag","debugging message");
 
+        ///////////////////////////////////////////////////////////////////////////////////
 
         ListView listView = (ListView) findViewById(R.id.listView);
         Log.d("tag","debugging message");
@@ -93,11 +113,12 @@ public class MyItemsList extends AppCompatActivity
             list.add(listVal[i]);
         }
 
-
         final ArrayAdapter<String> mAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, list);
         listView.setAdapter(mAdapter);
         Log.d("tag","debugging message");
     }
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     @Override
     public void onBackPressed() {
@@ -109,6 +130,7 @@ public class MyItemsList extends AppCompatActivity
             super.onBackPressed();
             Log.d("tag","debugging message");
         }
+
     }
 
     @Override
@@ -123,8 +145,8 @@ public class MyItemsList extends AppCompatActivity
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.MailBox) {
-            //
 
+            //
             return true;
         }
         else if (id==R.id.menu_search) {
@@ -144,7 +166,6 @@ public class MyItemsList extends AppCompatActivity
 
         if (id == R.id.communicate) {
             // Handle the communicate action
-
 
         } else if (id == R.id.my_local) {
 

@@ -25,6 +25,8 @@ public class LoginActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        /////////////////////////////////////////////
+
         IdInput = (EditText) findViewById(R.id.edit_id);
         PasswordInput = (EditText) findViewById(R.id.edit_password);
 
@@ -68,6 +70,8 @@ public class LoginActivity extends AppCompatActivity
             }
         });
 
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
     }
 
@@ -84,5 +88,6 @@ public class LoginActivity extends AppCompatActivity
         Intent intent = new Intent(LoginActivity.this, SignUp.class);
         intent.putExtra("Login_SignUp","data_2");
         startActivity(intent);
+        Log.d("tag","debugging message");
     }
 }

@@ -22,8 +22,12 @@ public class AddItem extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.additem);
 
+        ///////////////////////////////////////////////////////
+
         Intent intent = getIntent();
         String data = intent.getStringExtra("List_Add");
+
+        ///////////////////////////////////////////////////////
 
         final EditText ItemName = (EditText) findViewById(R.id.item_name); //Item_name
         ItemName.setOnKeyListener(new View.OnKeyListener() {
@@ -84,6 +88,9 @@ public class AddItem extends AppCompatActivity
                 imm.hideSoftInputFromWindow(ItemInfo.getWindowToken(),0);
             }
         });
+
+        ////////////////////////////////////////////////////////////////////////////////////
+
     }
 
 
@@ -93,4 +100,5 @@ public class AddItem extends AppCompatActivity
     }
 
 //    public void AddClick(View view) { }
+
 }
