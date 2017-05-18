@@ -69,8 +69,9 @@ public class LoginActivity extends AppCompatActivity
                 imm.hideSoftInputFromWindow(editPassword.getWindowToken(),0);
             }
         });
-
     }
+
+
 
     public void loginClick(View view) // Login Button Click
     {
