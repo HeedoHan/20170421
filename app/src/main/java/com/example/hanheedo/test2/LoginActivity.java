@@ -70,9 +70,6 @@ public class LoginActivity extends AppCompatActivity
             }
         });
 
-        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
     }
 
     public void loginClick(View view) // Login Button Click

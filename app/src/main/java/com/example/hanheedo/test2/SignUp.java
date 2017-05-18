@@ -36,7 +36,10 @@ import java.net.URLEncoder;
 
 public class SignUp extends AppCompatActivity {
     private EditText ID, NAME, PW, REPW, PNUM, GNAME;
-    ArrayAdapter<CharSequence> spinner1, spinner2;
+    ArrayAdapter<CharSequence> spinner1, spinner2; // adapter 선언
+    String sd, sgg;
+
+
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,235 +66,289 @@ public class SignUp extends AppCompatActivity {
         spinner1 = ArrayAdapter.createFromResource(SignUp.this, R.array.spinner_SD, R.layout.spinnerlayout);
         spin1.setAdapter(spinner1);
         spin1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                sd = spinner1.getItem(i).toString();
+                String sd = adapterView.getItemAtPosition(i).toString();
+
                 if (spinner1.getItem(i).equals("")) {
                     spinner2 = ArrayAdapter.createFromResource(SignUp.this, R.array.spinner_null_SGG, R.layout.spinnerlayout);
                     spin2.setAdapter(spinner2);
                     spin2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                         @Override
                         public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                            sgg = spinner2.getItem(i).toString();
+                            String sgg = adapterView.getItemAtPosition(i).toString();
                         }
 
                         @Override
                         public void onNothingSelected(AdapterView<?> adapterView) {
                         }
                     });
-                } else if (spinner1.getItem(i).equals("서울특별시")) {
+                }
+
+                else if (spinner1.getItem(i).equals("서울특별시")) {
                     spinner2 = ArrayAdapter.createFromResource(SignUp.this, R.array.spinner_seoul_SGG, R.layout.spinnerlayout);
                     spin2.setAdapter(spinner2);
                     spin2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                         @Override
                         public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-
+                            sgg = spinner2.getItem(i).toString();
+                            String sgg = adapterView.getItemAtPosition(i).toString();
                         }
 
                         @Override
                         public void onNothingSelected(AdapterView<?> adapterView) {
                         }
                     });
-                } else if (spinner1.getItem(i).equals("인천광역시")) {
+                }
+
+                else if (spinner1.getItem(i).equals("인천광역시")) {
                     spinner2 = ArrayAdapter.createFromResource(SignUp.this, R.array.spinner_incheon_SGG, R.layout.spinnerlayout);
                     spin2.setAdapter(spinner2);
                     spin2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                         @Override
                         public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-
+                            sgg = spinner2.getItem(i).toString();
+                            String sgg = adapterView.getItemAtPosition(i).toString();
                         }
 
                         @Override
                         public void onNothingSelected(AdapterView<?> adapterView) {
                         }
                     });
-                } else if (spinner1.getItem(i).equals("부산광역시")) {
+                }
+
+                else if (spinner1.getItem(i).equals("부산광역시")) {
                     spinner2 = ArrayAdapter.createFromResource(SignUp.this, R.array.spinner_Busan_SGG, R.layout.spinnerlayout);
                     spin2.setAdapter(spinner2);
                     spin2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                         @Override
                         public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-
+                            sgg = spinner2.getItem(i).toString();
+                            String sgg = adapterView.getItemAtPosition(i).toString();
                         }
 
                         @Override
                         public void onNothingSelected(AdapterView<?> adapterView) {
                         }
                     });
-                } else if (spinner1.getItem(i).equals("대전광역시")) {
+                }
+
+                else if (spinner1.getItem(i).equals("대전광역시")) {
 
                     spinner2 = ArrayAdapter.createFromResource(SignUp.this, R.array.spinner_Daejeon_SGG, R.layout.spinnerlayout);
                     spin2.setAdapter(spinner2);
                     spin2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                         @Override
                         public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-
+                            sgg = spinner2.getItem(i).toString();
+                            String sgg = adapterView.getItemAtPosition(i).toString();
                         }
 
                         @Override
                         public void onNothingSelected(AdapterView<?> adapterView) {
                         }
                     });
-                } else if (spinner1.getItem(i).equals("대구광역시")) {
+                }
+
+                else if (spinner1.getItem(i).equals("대구광역시")) {
 
                     spinner2 = ArrayAdapter.createFromResource(SignUp.this, R.array.spinner_Daegu_SGG, R.layout.spinnerlayout);
                     spin2.setAdapter(spinner2);
                     spin2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                         @Override
                         public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-
+                            sgg = spinner2.getItem(i).toString();
+                            String sgg = adapterView.getItemAtPosition(i).toString();
                         }
 
                         @Override
                         public void onNothingSelected(AdapterView<?> adapterView) {
                         }
                     });
-                } else if (spinner1.getItem(i).equals("광주광역시")) {
+                }
+
+                else if (spinner1.getItem(i).equals("광주광역시")) {
 
                     spinner2 = ArrayAdapter.createFromResource(SignUp.this, R.array.spinner_Gwangju_SGG, R.layout.spinnerlayout);
                     spin2.setAdapter(spinner2);
                     spin2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                         @Override
                         public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-
+                            sgg = spinner2.getItem(i).toString();
+                            String sgg = adapterView.getItemAtPosition(i).toString();
                         }
 
                         @Override
                         public void onNothingSelected(AdapterView<?> adapterView) {
                         }
                     });
-                } else if (spinner1.getItem(i).equals("울산광역시")) {
+                }
+
+                else if (spinner1.getItem(i).equals("울산광역시")) {
 
                     spinner2 = ArrayAdapter.createFromResource(SignUp.this, R.array.spinner_Ulsan_SGG, R.layout.spinnerlayout);
                     spin2.setAdapter(spinner2);
                     spin2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                         @Override
                         public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-
+                            sgg = spinner2.getItem(i).toString();
+                            String sgg = adapterView.getItemAtPosition(i).toString();
                         }
 
                         @Override
                         public void onNothingSelected(AdapterView<?> adapterView) {
                         }
                     });
-                } else if (spinner1.getItem(i).equals("경기도")) {
+                }
+
+                else if (spinner1.getItem(i).equals("경기도")) {
 
                     spinner2 = ArrayAdapter.createFromResource(SignUp.this, R.array.spinner_Gyeonggi_SGG, R.layout.spinnerlayout);
                     spin2.setAdapter(spinner2);
                     spin2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                         @Override
                         public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-
+                            sgg = spinner2.getItem(i).toString();
+                            String sgg = adapterView.getItemAtPosition(i).toString();
                         }
 
                         @Override
                         public void onNothingSelected(AdapterView<?> adapterView) {
                         }
                     });
-                } else if (spinner1.getItem(i).equals("강원도")) {
+                }
+
+                else if (spinner1.getItem(i).equals("강원도")) {
 
                     spinner2 = ArrayAdapter.createFromResource(SignUp.this, R.array.spinner_Gangwon_SGG, R.layout.spinnerlayout);
                     spin2.setAdapter(spinner2);
                     spin2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                         @Override
                         public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-
+                            sgg = spinner2.getItem(i).toString();
+                            String sgg = adapterView.getItemAtPosition(i).toString();
                         }
 
                         @Override
                         public void onNothingSelected(AdapterView<?> adapterView) {
                         }
                     });
-                } else if (spinner1.getItem(i).equals("경상남도")) {
+                }
+
+                else if (spinner1.getItem(i).equals("경상남도")) {
 
                     spinner2 = ArrayAdapter.createFromResource(SignUp.this, R.array.spinner_Gyeongnam_SGG, R.layout.spinnerlayout);
                     spin2.setAdapter(spinner2);
                     spin2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                         @Override
                         public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-
+                            sgg = spinner2.getItem(i).toString();
+                            String sgg = adapterView.getItemAtPosition(i).toString();
                         }
 
                         @Override
                         public void onNothingSelected(AdapterView<?> adapterView) {
                         }
                     });
-                } else if (spinner1.getItem(i).equals("경상북도")) {
+                }
+
+                else if (spinner1.getItem(i).equals("경상북도")) {
 
                     spinner2 = ArrayAdapter.createFromResource(SignUp.this, R.array.spinner_Gyeongbuk_SGG, R.layout.spinnerlayout);
                     spin2.setAdapter(spinner2);
                     spin2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                         @Override
                         public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-
+                            sgg = spinner2.getItem(i).toString();
+                            String sgg = adapterView.getItemAtPosition(i).toString();
                         }
 
                         @Override
                         public void onNothingSelected(AdapterView<?> adapterView) {
                         }
                     });
-                } else if (spinner1.getItem(i).equals("전라남도")) {
+                }
+
+                else if (spinner1.getItem(i).equals("전라남도")) {
 
                     spinner2 = ArrayAdapter.createFromResource(SignUp.this, R.array.spinner_Jeollanam_SGG, R.layout.spinnerlayout);
                     spin2.setAdapter(spinner2);
                     spin2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                         @Override
                         public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-
+                            sgg = spinner2.getItem(i).toString();
+                            String sgg = adapterView.getItemAtPosition(i).toString();
                         }
 
                         @Override
                         public void onNothingSelected(AdapterView<?> adapterView) {
                         }
                     });
-                } else if (spinner1.getItem(i).equals("전라북도")) {
+                }
+
+                else if (spinner1.getItem(i).equals("전라북도")) {
 
                     spinner2 = ArrayAdapter.createFromResource(SignUp.this, R.array.spinner_Jeollabuk_SGG, R.layout.spinnerlayout);
                     spin2.setAdapter(spinner2);
                     spin2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                         @Override
                         public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-
+                            sgg = spinner2.getItem(i).toString();
+                            String sgg = adapterView.getItemAtPosition(i).toString();
                         }
 
                         @Override
                         public void onNothingSelected(AdapterView<?> adapterView) {
                         }
                     });
-                } else if (spinner1.getItem(i).equals("제주도")) {
+                }
+
+                else if (spinner1.getItem(i).equals("제주도")) {
 
                     spinner2 = ArrayAdapter.createFromResource(SignUp.this, R.array.spinner_Jeju_SGG, R.layout.spinnerlayout);
                     spin2.setAdapter(spinner2);
                     spin2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                         @Override
                         public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-
+                            sgg = spinner2.getItem(i).toString();
+                            String sgg = adapterView.getItemAtPosition(i).toString();
                         }
 
                         @Override
                         public void onNothingSelected(AdapterView<?> adapterView) {
                         }
                     });
-                } else if (spinner1.getItem(i).equals("충청남도")) {
+                }
+
+                else if (spinner1.getItem(i).equals("충청남도")) {
 
                     spinner2 = ArrayAdapter.createFromResource(SignUp.this, R.array.spinner_Chungcheongnam_SGG, R.layout.spinnerlayout);
                     spin2.setAdapter(spinner2);
                     spin2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                         @Override
                         public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-
+                            sgg = spinner2.getItem(i).toString();
+                            String sgg = adapterView.getItemAtPosition(i).toString();
                         }
 
                         @Override
                         public void onNothingSelected(AdapterView<?> adapterView) {
                         }
                     });
-                } else if (spinner1.getItem(i).equals("충청북도")) {
+                }
+
+                else if (spinner1.getItem(i).equals("충청북도")) {
 
                     spinner2 = ArrayAdapter.createFromResource(SignUp.this, R.array.spinner_Chungcheongbuk_SGG, R.layout.spinnerlayout);
                     spin2.setAdapter(spinner2);
                     spin2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                         @Override
                         public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-
+                            sgg = spinner2.getItem(i).toString();
+                            String sgg = adapterView.getItemAtPosition(i).toString();
                         }
 
                         @Override
@@ -471,13 +528,13 @@ public class SignUp extends AppCompatActivity {
             return;
         }
 
-        insertToDataBase(id, name, pw, pnum, gname);
+        insertToDataBase(id, name, pw, pnum, gname, sd, sgg);
         finish();
     }
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    private void insertToDataBase(String id, String name, String pw, String pnum, String gname) {
+    private void insertToDataBase(String id, String name, String pw, String pnum, String gname, String sd, String sgg) {
         class InsertData extends AsyncTask<String, Void, String> {
             ProgressDialog loading;
 
@@ -503,6 +560,8 @@ public class SignUp extends AppCompatActivity {
                     String pw = (String) params[2];
                     String pnum = (String) params[3];
                     String gname = (String) params[4];
+                    String sd = (String) params[5];
+                    String sgg = (String) params[6];
 
 
                     String link = "http://hido0604.dothome.co.kr/YI/signup.php";
@@ -511,6 +570,8 @@ public class SignUp extends AppCompatActivity {
                     data += "&" + URLEncoder.encode("pw", "UTF-8") + "=" + URLEncoder.encode(pw, "UTF-8");
                     data += "&" + URLEncoder.encode("pnum", "UTF-8") + "=" + URLEncoder.encode(pnum, "UTF-8");
                     data += "&" + URLEncoder.encode("gname", "UTF-8") + "=" + URLEncoder.encode(gname, "UTF-8");
+                    data += "&" + URLEncoder.encode("sd", "UTF-8") + "=" + URLEncoder.encode(sd, "UTF-8");
+                    data += "&" + URLEncoder.encode("sgg", "UTF-8") + "=" + URLEncoder.encode(sgg, "UTF-8");
 
                     URL url = new URL(link);
                     URLConnection conn = url.openConnection();
@@ -539,7 +600,7 @@ public class SignUp extends AppCompatActivity {
         }
 
         InsertData task = new InsertData();
-        task.execute(id, name, pw, pnum, gname);
+        task.execute(id, name, pw, pnum, gname, sd, sgg);
     }
 
     /////////////////////////////////////////////////////////////////////////////////
