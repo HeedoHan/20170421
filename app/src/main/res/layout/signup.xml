@@ -100,7 +100,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:background="@drawable/back"
-                android:hint=" Password"
+                android:hint=" Password(4-16)"
                 android:inputType="textPassword"
                 android:textSize="15dp" />
 

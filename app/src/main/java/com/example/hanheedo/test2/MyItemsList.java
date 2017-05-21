@@ -17,6 +17,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
+
 import java.util.ArrayList;
 
 public class MyItemsList extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -29,11 +31,14 @@ public class MyItemsList extends AppCompatActivity implements NavigationView.OnN
         setContentView(R.layout.myitemslist);
         Log.d("tag","debugging message");
 
-        /////////////////////////////////////////////////////////
 
         Intent intent = getIntent();
-        String data = intent.getStringExtra("Login_List");
-        Log.d("tag","debugging message");
+        Log.d("tag", "debugging message");
+        String id = intent.getStringExtra("id");
+        String pw = intent.getStringExtra("pw");
+        Log.d("tag", "debugging message");
+
+        Toast.makeText(getApplicationContext(), id + "님, 환영합니다", Toast.LENGTH_SHORT).show();
 
         //////////////////////////////////////////////////////////
 

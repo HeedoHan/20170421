@@ -29,6 +29,7 @@ import java.io.OutputStreamWriter;
 import java.net.URL;
 import java.net.URLConnection;
 import java.net.URLEncoder;
+import java.util.regex.Pattern;
 
 /**
  * Created by Han Heedo on 2017-03-29.
@@ -525,6 +526,12 @@ public class SignUp extends AppCompatActivity {
             PW.setText("");
             REPW.setText("");
             PW.requestFocus();
+            return;
+        }
+
+        if(!Pattern.matches("^[a-zA-Z0-9!@.#$%^&*?_~]{4,16}$", pw)) // 4자리 - 16자리까지 가능
+        {
+            Toast.makeText(SignUp.this,"비밀번호 형식을 지켜주세요.",Toast.LENGTH_SHORT).show();
             return;
         }
 
