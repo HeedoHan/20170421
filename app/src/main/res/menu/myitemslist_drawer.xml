@@ -4,33 +4,11 @@
 
     <group android:checkableBehavior="single">
 
-        <item android:title="Local/Group">
-            <menu>
-                <item
-                    android:id="@+id/my_local"
-                    android:title="     My Local" />
-                <item
-                    android:id="@+id/my_group"
-                    android:title="     My Group" />
-            </menu>
-        </item>
-
         <item android:title="Information">
             <menu>
                 <item
                     android:id="@+id/my_info"
                     android:title="     My Information" />
-            </menu>
-        </item>
-
-        <item android:title="Communicate">
-            <menu>
-                <item
-                    android:id="@+id/local_communicate"
-                    android:title="     Local Community" />
-                <item
-                    android:id="@+id/group_communicate"
-                    android:title="     Group Community" />
             </menu>
         </item>
 

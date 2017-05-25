@@ -86,20 +86,6 @@ public class MyItemsList extends AppCompatActivity implements NavigationView.OnN
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.inflateMenu(R.menu.my_items_list);
 
-//        SearchView mSearchView;
-//
-//        mSearchView = (SearchView) toolbar.getMenu().findItem(R.id.menu_search).getActionView();
-//        mSearchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-//            @Override
-//            public boolean onQueryTextSubmit(String s) {
-//                return false;
-//            }
-//            @Override
-//            public boolean onQueryTextChange(String s) {
-//                return false;
-//            }
-//        });
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -178,50 +164,6 @@ public class MyItemsList extends AppCompatActivity implements NavigationView.OnN
         return true;
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        if (id == R.id.MailBox) {
-            return true;
-        }
-//        else if (id==R.id.menu_search) {
-//
-//            EditText search = (EditText) findViewById(R.id.menu_search);
-//            search.addTextChangedListener(new TextWatcher() {
-//                @Override
-//                public void beforeTextChanged(CharSequence s, int i, int i1, int i2) {
-//
-//                }
-//
-//                @Override
-//                public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-//                    searchItem(charSequence.toString());
-//                }
-//
-//                @Override
-//                public void afterTextChanged(Editable editable) {
-//
-//                }
-//            });
-//            //
-//
-//            return true;
-//        }
-        return super.onOptionsItemSelected(item);
-    }
-
-//    public void searchItem(String search) {
-//        itemList.clear();
-//        for(int i =0; i<saveList.size(); i++)
-//        {
-//            if(saveList.get(i).getItemName().contains(search))
-//            {
-//                itemList.add(saveList.get(i));
-//            }
-//        }
-//        adapter.notifyDataSetChanged();
-//    }
-
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
@@ -231,18 +173,11 @@ public class MyItemsList extends AppCompatActivity implements NavigationView.OnN
         Fragment fragment = null;
         String title = getString(R.string.app_name);
 
-        if (id == R.id.my_local) {
-
-        } else if (id == R.id.my_group) {
-
-        } else if (id == R.id.my_info) {
+        if (id == R.id.my_info) {
             fragment = new MyinfoFragment();
             title = "Myinfo";
-        } else if (id == R.id.local_communicate) {
-
-        } else if (id == R.id.group_communicate) {
-
-        } else if (id == R.id.logout) {
+        }
+            else if (id == R.id.logout) {
                 finish();
         }
 

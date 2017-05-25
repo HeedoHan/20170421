@@ -7,7 +7,10 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/app_bar_my_items_list"
-    android:gravity="center">
+    android:paddingBottom="100dp"
+    android:paddingTop="20dp"
+    android:paddingLeft="50dp"
+    android:paddingRight="50dp">
 
     <FrameLayout
         android:id="@+id/content_fragment_layout"
@@ -19,7 +22,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="ItemButton"
-            android:text="내가 올린 아이템 보기"
+            android:text="공유된 아이템 보기"
             android:textSize="30dp"
             tools:layout_editor_absoluteX="132dp"
             tools:layout_editor_absoluteY="193dp" />

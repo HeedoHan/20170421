@@ -12,7 +12,6 @@ public class Item {
     private String day;
     private String lentStatus;
 
-
     public String getItemNum() {
         return itemNum;
     }
