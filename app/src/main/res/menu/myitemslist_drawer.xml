@@ -34,11 +34,8 @@
             </menu>
         </item>
 
-        <item android:title="Settings">
+        <item android:title="Exit">
             <menu>
-                <item
-                    android:id="@+id/setting"
-                    android:title="     Setting" />
                 <item
                     android:id="@+id/logout"
                     android:title="     Logout" />

@@ -38,9 +38,6 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        Log.d("tag", "debugging message");
-
-        ///////////////////////////////////////////
 
         final EditText editId = (EditText) findViewById(R.id.edit_id); //Id
         editId.setOnKeyListener(new View.OnKeyListener() {
@@ -49,7 +46,6 @@ public class LoginActivity extends AppCompatActivity {
                 if (keyCode == event.KEYCODE_ENTER) {
                     return true;
                 } else
-
                 return false;
             }
         });
@@ -107,25 +103,19 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
-        //////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
     public void loginClick(View view) // Login Button Click
     {
-
         final EditText IdInput = (EditText) findViewById(R.id.edit_id);
         final EditText PasswordInput = (EditText) findViewById(R.id.edit_password);
         final String id = IdInput.getText().toString();
         final String pw = PasswordInput.getText().toString();
-        Log.d("tag", "debugging message");
 
         Response.Listener<String> responseListener = new Response.Listener<String>() {
-
             @Override
             public void onResponse(String response) {
                 try {
                     JSONObject jsonResponse = new JSONObject(response);
                     boolean success = jsonResponse.getBoolean("success");
-                    Log.d("tag", "debugging message");
 
                     if (success)
                     {
@@ -136,10 +126,8 @@ public class LoginActivity extends AppCompatActivity {
                         String gname = jsonResponse.getString("gname");
                         String sd = jsonResponse.getString("sd");
                         String sgg = jsonResponse.getString("sgg");
-                        Log.d("tag", "debugging message");
 
                         Intent intent = new Intent(LoginActivity.this, MyItemsList.class);
-
                         intent.putExtra("id", id);
                         intent.putExtra("pw", pw);
                         intent.putExtra("name", name);
@@ -148,31 +136,21 @@ public class LoginActivity extends AppCompatActivity {
                         intent.putExtra("sd", sd);
                         intent.putExtra("sgg", sgg);
 
-
-                        Log.d("tag", "debugging message");
-
-                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-
-                        new BackgroundTask().execute();
                         LoginActivity.this.startActivity(intent);
+                        finish();
                     }
 
                     else
                     {
                         AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);
-                        Log.d("tag", "debugging message");
                         builder.setMessage("로그인에 실패하였습니다.")
                                 .setNegativeButton("다시 시도", null)
                                 .create()
                                 .show();
-                        Log.d("tag", "debugging message");
                     }
-
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-
             }
         };
 
@@ -181,50 +159,7 @@ public class LoginActivity extends AppCompatActivity {
         queue.add(loginRequest);
     }
 
-    class BackgroundTask extends AsyncTask<Void, Void, String>
-    {
-        String target;
 
-        @Override
-        protected void onPreExecute() {
-            target = "http://hido0604.dothome.co.kr/YI/ItemsRequest.php";
-        }
-
-        @Override
-        protected String doInBackground(Void... voids) {
-            try {
-                URL url = new URL(target);
-                HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
-                InputStream inputStream = httpURLConnection.getInputStream();
-                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
-                String temp;
-                StringBuilder stringBuilder = new StringBuilder();
-                while((temp=bufferedReader.readLine())!= null)
-                {
-                    stringBuilder.append(temp + "\n");
-                }
-                bufferedReader.close();
-                inputStream.close();
-                httpURLConnection.disconnect();
-                return stringBuilder.toString().trim();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-            return null;
-        }
-
-        @Override
-        public  void onProgressUpdate(Void... values) {
-            super.onProgressUpdate(values);
-        }
-
-        @Override
-        public void onPostExecute(String result) {
-            Intent intent = new Intent(LoginActivity.this, MyItemsList.class);
-            intent.putExtra("itemList", result);
-            LoginActivity.this.startActivity(intent);
-        }
-    }
 
     public void signUpClick(View view) // SignUp Button Click
     {

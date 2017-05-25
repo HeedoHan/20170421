@@ -51,17 +51,11 @@ public class AddItem extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.additem);
 
-        Log.d("tag", "debugging message");
-
         ItemType = (EditText) findViewById(R.id.item_type);
         ItemName = (EditText) findViewById(R.id.item_name);
         Price = (EditText) findViewById(R.id.editprice);
         Day = (EditText) findViewById(R.id.editday);
-
         final Spinner spin3 = (Spinner) findViewById(R.id.status_spinner);
-
-        ////////////////////////////////////////////////////////
-
         spinner3 = ArrayAdapter.createFromResource(AddItem.this, R.array.spinner_lentStatus, R.layout.support_simple_spinner_dropdown_item);
         spin3.setAdapter(spinner3);
         spin3.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -76,8 +70,6 @@ public class AddItem extends AppCompatActivity
 
             }
         });
-
-        ///////////////////////////////////////////////////////////////////
 
         final EditText ItemName = (EditText) findViewById(R.id.item_name); //Item_name
         ItemName.setOnKeyListener(new View.OnKeyListener() {
@@ -120,7 +112,6 @@ public class AddItem extends AppCompatActivity
         });
     }
 
-
     public void cancelClick(View view)
     {
         finish();
@@ -159,7 +150,7 @@ public class AddItem extends AppCompatActivity
         }
 
         insertToDataBase(itemType, itemName, price, day, lentStatus);
-        new BackgroundTask().execute();
+        Intent intent = new Intent(AddItem.this, MyItemsList.class);
         finish();
     }
 
@@ -225,49 +216,5 @@ public class AddItem extends AppCompatActivity
 
         InsertData task = new InsertData();
         task.execute(itemType, itemName, price, day, lentStatus);
-    }
-
-    private class BackgroundTask extends AsyncTask<Void, Void, String> {
-        String target;
-
-        @Override
-        protected void onPreExecute() {
-            target = "http://hido0604.dothome.co.kr/YI/ItemsRequest.php";
-        }
-
-        @Override
-        protected String doInBackground(Void... voids) {
-            try {
-                URL url = new URL(target);
-                HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
-                InputStream inputStream = httpURLConnection.getInputStream();
-                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
-                String temp;
-                StringBuilder stringBuilder = new StringBuilder();
-                while((temp=bufferedReader.readLine())!= null)
-                {
-                    stringBuilder.append(temp + "\n");
-                }
-                bufferedReader.close();
-                inputStream.close();
-                httpURLConnection.disconnect();
-                return stringBuilder.toString().trim();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-            return null;
-        }
-
-        @Override
-        public  void onProgressUpdate(Void... values) {
-            super.onProgressUpdate(values);
-        }
-
-        @Override
-        public void onPostExecute(String result) {
-            Intent intent = new Intent(AddItem.this, MyItemsList.class);
-            intent.putExtra("itemList", result);
-            AddItem.this.startActivity(intent);
-        }
     }
 }

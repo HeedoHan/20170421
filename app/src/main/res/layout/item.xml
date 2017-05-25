@@ -1,29 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/ItemsListViewLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_gravity="center"
     android:background="#ffffff"
     android:orientation="vertical"
-    android:weightSum="1">
+    android:paddingBottom="5dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingTop="5dp">
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_gravity="center"
-        android:orientation="horizontal">
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingBottom="10dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="10dp">
+
+        <Button
+            android:layout_width="59dp"
+            android:layout_height="36dp"
+            android:text="삭제"
+            android:background="#00a7f5"
+            android:textColor="#fff"
+            android:textSize="20dp"
+            android:id="@+id/deleteButton"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="10dp">
 
         <TextView
             android:id="@+id/itemNum"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Num"
+            android:textColor="#00a7f5"
             android:textSize="15dp" />
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="|"
             android:textSize="25dp"
@@ -31,13 +57,14 @@
 
         <TextView
             android:id="@+id/itemType"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Type"
+            android:textColor="#f92a3f"
             android:textSize="15dp" />
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="|"
             android:textSize="25dp"
@@ -45,13 +72,14 @@
 
         <TextView
             android:id="@+id/itemName"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Name"
+            android:textColor="#000"
             android:textSize="15dp" />
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="|"
             android:textSize="25dp"
@@ -59,54 +87,61 @@
 
         <TextView
             android:id="@+id/price"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="price"
+            android:textColor="#a902f0"
             android:textSize="15dp" />
+
 
         <TextView
             android:id="@+id/won"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="원"
-            android:textSize="15dp" />
+            android:textColor="#00a7f5"
+            android:textSize="13dp" />
 
         <TextView
             android:id="@+id/per"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="/"
-            android:textSize="15dp" />
+            android:textColor="#f92a3f"
+            android:textSize="18dp" />
 
         <TextView
             android:id="@+id/day"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="day"
-            android:textSize="15dp" />
+            android:textColor="#000"
+            android:textSize="13dp" />
 
         <TextView
             android:id="@+id/il"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="일"
-            android:textSize="15dp" />
+            android:textColor="#a902f0"
+            android:textSize="13dp" />
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="|"
+            android:textColor="#00a7f5"
             android:textSize="25dp"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/lentStatus"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Status"
-            android:textSize="15dp" />
+            android:textColor="#f92a3f"
+            android:textSize="13dp" />
 
     </LinearLayout>
-
 
 </LinearLayout>
