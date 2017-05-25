@@ -99,7 +99,7 @@ public class MyItemsList extends AppCompatActivity implements NavigationView.OnN
         String target;
         @Override
         protected void onPreExecute() {
-            target = "http://hido0604.dothome.co.kr/YI/ItemsRequest.php";
+            target = "http://hido0604.dothome.co.kr/YI/ItemsRequest_2.php";
         }
 
         @Override

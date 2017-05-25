@@ -11,6 +11,7 @@ public class Item {
     private String price;
     private String day;
     private String lentStatus;
+    private String contactInfo;
 
     public String getItemNum() {
         return itemNum;
@@ -56,16 +57,23 @@ public class Item {
         return lentStatus;
     }
 
-    public void setLentStatus(String lentStatus) {
-        this.lentStatus = lentStatus;
+    public void setLentStatus(String lentStatus) { this.lentStatus = lentStatus; }
+
+    public String getContactInfo() {
+        return contactInfo;
     }
 
-    public Item(String itemNum, String itemType, String itemName, String price, String day, String lentStatus) {
+    public void setContactInfo(String contactInfo) {
+        this.contactInfo = contactInfo;
+    }
+
+    public Item(String itemNum, String itemType, String itemName, String price, String day, String lentStatus, String contactInfo) {
         this.itemNum = itemNum;
         this.itemType = itemType;
         this.itemName = itemName;
         this.price = price;
         this.day = day;
         this.lentStatus = lentStatus;
+        this.contactInfo = contactInfo;
     }
 }

@@ -2,6 +2,7 @@ package com.example.hanheedo.test2;
 
 import android.app.Activity;
 import android.content.Context;
+import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -13,6 +14,7 @@ import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
 
 import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 import java.util.List;
 
@@ -57,6 +59,7 @@ public class ItemListAdapter extends BaseAdapter {
         TextView price = (TextView) v.findViewById(R.id.price);
         TextView day = (TextView) v.findViewById(R.id.day);
         TextView lentStatus = (TextView) v.findViewById(R.id.lentStatus);
+        TextView contactInfo = (TextView) v.findViewById(R.id.contactInfo);
 
         itemNum.setText(itemList.get(i).getItemNum());
         itemType.setText(itemList.get(i).getItemType());
@@ -64,6 +67,8 @@ public class ItemListAdapter extends BaseAdapter {
         price.setText(itemList.get(i).getPrice());
         day.setText(itemList.get(i).getDay());
         lentStatus.setText(itemList.get(i).getLentStatus());
+        contactInfo.setText(itemList.get(i).getContactInfo());
+
 
         v.setTag(itemList.get(i).getItemNum());
 

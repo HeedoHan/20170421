@@ -42,7 +42,7 @@ import java.net.URLEncoder;
 
 public class AddItem extends AppCompatActivity
 {
-    private EditText ItemType, ItemName, Price, Day;
+    private EditText ItemType, ItemName, Price, Day, ContactInfo;
     ArrayAdapter<CharSequence> spinner3;
     String lentStatus;
 
@@ -55,6 +55,8 @@ public class AddItem extends AppCompatActivity
         ItemName = (EditText) findViewById(R.id.item_name);
         Price = (EditText) findViewById(R.id.editprice);
         Day = (EditText) findViewById(R.id.editday);
+        ContactInfo = (EditText) findViewById(R.id.editcontact);
+
         final Spinner spin3 = (Spinner) findViewById(R.id.status_spinner);
         spinner3 = ArrayAdapter.createFromResource(AddItem.this, R.array.spinner_lentStatus, R.layout.support_simple_spinner_dropdown_item);
         spin3.setAdapter(spinner3);
@@ -123,6 +125,7 @@ public class AddItem extends AppCompatActivity
         String itemName = ItemName.getText().toString();
         String price = Price.getText().toString();
         String day = Day.getText().toString();
+        String contactInfo = ContactInfo.getText().toString();
         Log.d("tag", "debugging message");
 
         if (ItemType.getText().toString().length() == 0) {
@@ -149,12 +152,19 @@ public class AddItem extends AppCompatActivity
             return;
         }
 
-        insertToDataBase(itemType, itemName, price, day, lentStatus);
+        if (ContactInfo.getText().toString().length() == 0) {
+            Toast.makeText(AddItem.this, "연락처 정보를 입력하세요.", Toast.LENGTH_SHORT).show();
+            ContactInfo.requestFocus();
+            return;
+        }
+
+
+        insertToDataBase(itemType, itemName, price, day, lentStatus, contactInfo);
         Intent intent = new Intent(AddItem.this, MyItemsList.class);
         finish();
     }
 
-    private void insertToDataBase(String itemType, String itemName, String price, String day, String lentStatus) {
+    private void insertToDataBase(String itemType, String itemName, String price, String day, String lentStatus, String contactInfo) {
         class InsertData extends AsyncTask<String, Void, String> {
             ProgressDialog loading;
 
@@ -180,6 +190,7 @@ public class AddItem extends AppCompatActivity
                     String price = (String) params[2];
                     String day = (String) params[3];
                     String lentStatus = (String) params[4];
+                    String contactInfo = (String) params[5];
 
                     String link = "http://hido0604.dothome.co.kr/YI/addItem.php";
                     String data = URLEncoder.encode("itemType", "UTF-8") + "=" + URLEncoder.encode(itemType, "UTF-8");
@@ -187,6 +198,7 @@ public class AddItem extends AppCompatActivity
                     data += "&" + URLEncoder.encode("price", "UTF-8") + "=" + URLEncoder.encode(price, "UTF-8");
                     data += "&" + URLEncoder.encode("day", "UTF-8") + "=" + URLEncoder.encode(day, "UTF-8");
                     data += "&" + URLEncoder.encode("lentStatus", "UTF-8") + "=" + URLEncoder.encode(lentStatus, "UTF-8");
+                    data += "&" + URLEncoder.encode("contactInfo", "UTF-8") + "=" + URLEncoder.encode(contactInfo, "UTF-8");
 
                     URL url = new URL(link);
                     URLConnection conn = url.openConnection();
@@ -215,6 +227,6 @@ public class AddItem extends AppCompatActivity
         }
 
         InsertData task = new InsertData();
-        task.execute(itemType, itemName, price, day, lentStatus);
+        task.execute(itemType, itemName, price, day, lentStatus, contactInfo);
     }
 }

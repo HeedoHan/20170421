@@ -127,11 +127,11 @@
             android:textSize="13dp" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="|"
-            android:textSize="25dp"
-            android:textStyle="bold" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="|"
+        android:textSize="25dp"
+        android:textStyle="bold" />
 
         <TextView
             android:id="@+id/lentStatus"
@@ -139,6 +139,21 @@
             android:layout_height="wrap_content"
             android:text="Status"
             android:textColor="#f92a3f"
+            android:textSize="13dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="|"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/contactInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ContactInfo"
+            android:textColor="#2aadf9"
             android:textSize="13dp" />
 
     </LinearLayout>

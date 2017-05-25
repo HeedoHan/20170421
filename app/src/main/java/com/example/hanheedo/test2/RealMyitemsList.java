@@ -43,7 +43,7 @@ public class RealMyitemsList extends AppCompatActivity {
             JSONObject jsonObject = new JSONObject(intent.getStringExtra("itemList"));
             JSONArray jsonArray = jsonObject.getJSONArray("response");
             int count = 0;
-            String itemNum, itemType, itemName, price, day, lentStatus;
+            String itemNum, itemType, itemName, price, day, lentStatus, contactInfo;
             while (count < jsonArray.length()) {
                 JSONObject object = jsonArray.getJSONObject(count);
                 itemNum = object.getString("itemNum");
@@ -52,7 +52,8 @@ public class RealMyitemsList extends AppCompatActivity {
                 price = object.getString("price");
                 day = object.getString("day");
                 lentStatus = object.getString("lentStatus");
-                Item item = new Item(itemNum, itemType, itemName, price, day, lentStatus);
+                contactInfo = object.getString("contactInfo");
+                Item item = new Item(itemNum, itemType, itemName, price, day, lentStatus, contactInfo);
                 itemList.add(item);
                 count++;
             }
