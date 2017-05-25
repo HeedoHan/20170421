@@ -40,8 +40,6 @@ public class SignUp extends AppCompatActivity {
     ArrayAdapter<CharSequence> spinner1, spinner2; // adapter 선언
     String sd, sgg;
 
-
-
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.d("tag", "debugging message");
@@ -50,7 +48,7 @@ public class SignUp extends AppCompatActivity {
 
         Intent intent = getIntent();
         String data = intent.getStringExtra("Login_SignUp");
-        Log.d("tag","debugging message");
+        Log.d("tag", "debugging message");
 
         /////////////////////////////////////////////////////////////////
 
@@ -87,9 +85,7 @@ public class SignUp extends AppCompatActivity {
                         public void onNothingSelected(AdapterView<?> adapterView) {
                         }
                     });
-                }
-
-                else if (spinner1.getItem(i).equals("서울특별시")) {
+                } else if (spinner1.getItem(i).equals("서울특별시")) {
                     spinner2 = ArrayAdapter.createFromResource(SignUp.this, R.array.spinner_seoul_SGG, R.layout.spinnerlayout);
                     spin2.setAdapter(spinner2);
                     spin2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -103,9 +99,7 @@ public class SignUp extends AppCompatActivity {
                         public void onNothingSelected(AdapterView<?> adapterView) {
                         }
                     });
-                }
-
-                else if (spinner1.getItem(i).equals("인천광역시")) {
+                } else if (spinner1.getItem(i).equals("인천광역시")) {
                     spinner2 = ArrayAdapter.createFromResource(SignUp.this, R.array.spinner_incheon_SGG, R.layout.spinnerlayout);
                     spin2.setAdapter(spinner2);
                     spin2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -119,9 +113,7 @@ public class SignUp extends AppCompatActivity {
                         public void onNothingSelected(AdapterView<?> adapterView) {
                         }
                     });
-                }
-
-                else if (spinner1.getItem(i).equals("부산광역시")) {
+                } else if (spinner1.getItem(i).equals("부산광역시")) {
                     spinner2 = ArrayAdapter.createFromResource(SignUp.this, R.array.spinner_Busan_SGG, R.layout.spinnerlayout);
                     spin2.setAdapter(spinner2);
                     spin2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -135,9 +127,7 @@ public class SignUp extends AppCompatActivity {
                         public void onNothingSelected(AdapterView<?> adapterView) {
                         }
                     });
-                }
-
-                else if (spinner1.getItem(i).equals("대전광역시")) {
+                } else if (spinner1.getItem(i).equals("대전광역시")) {
 
                     spinner2 = ArrayAdapter.createFromResource(SignUp.this, R.array.spinner_Daejeon_SGG, R.layout.spinnerlayout);
                     spin2.setAdapter(spinner2);
@@ -152,9 +142,7 @@ public class SignUp extends AppCompatActivity {
                         public void onNothingSelected(AdapterView<?> adapterView) {
                         }
                     });
-                }
-
-                else if (spinner1.getItem(i).equals("대구광역시")) {
+                } else if (spinner1.getItem(i).equals("대구광역시")) {
 
                     spinner2 = ArrayAdapter.createFromResource(SignUp.this, R.array.spinner_Daegu_SGG, R.layout.spinnerlayout);
                     spin2.setAdapter(spinner2);
@@ -169,9 +157,7 @@ public class SignUp extends AppCompatActivity {
                         public void onNothingSelected(AdapterView<?> adapterView) {
                         }
                     });
-                }
-
-                else if (spinner1.getItem(i).equals("광주광역시")) {
+                } else if (spinner1.getItem(i).equals("광주광역시")) {
 
                     spinner2 = ArrayAdapter.createFromResource(SignUp.this, R.array.spinner_Gwangju_SGG, R.layout.spinnerlayout);
                     spin2.setAdapter(spinner2);
@@ -186,9 +172,7 @@ public class SignUp extends AppCompatActivity {
                         public void onNothingSelected(AdapterView<?> adapterView) {
                         }
                     });
-                }
-
-                else if (spinner1.getItem(i).equals("울산광역시")) {
+                } else if (spinner1.getItem(i).equals("울산광역시")) {
 
                     spinner2 = ArrayAdapter.createFromResource(SignUp.this, R.array.spinner_Ulsan_SGG, R.layout.spinnerlayout);
                     spin2.setAdapter(spinner2);
@@ -203,9 +187,7 @@ public class SignUp extends AppCompatActivity {
                         public void onNothingSelected(AdapterView<?> adapterView) {
                         }
                     });
-                }
-
-                else if (spinner1.getItem(i).equals("경기도")) {
+                } else if (spinner1.getItem(i).equals("경기도")) {
 
                     spinner2 = ArrayAdapter.createFromResource(SignUp.this, R.array.spinner_Gyeonggi_SGG, R.layout.spinnerlayout);
                     spin2.setAdapter(spinner2);
@@ -220,9 +202,7 @@ public class SignUp extends AppCompatActivity {
                         public void onNothingSelected(AdapterView<?> adapterView) {
                         }
                     });
-                }
-
-                else if (spinner1.getItem(i).equals("강원도")) {
+                } else if (spinner1.getItem(i).equals("강원도")) {
 
                     spinner2 = ArrayAdapter.createFromResource(SignUp.this, R.array.spinner_Gangwon_SGG, R.layout.spinnerlayout);
                     spin2.setAdapter(spinner2);
@@ -237,9 +217,7 @@ public class SignUp extends AppCompatActivity {
                         public void onNothingSelected(AdapterView<?> adapterView) {
                         }
                     });
-                }
-
-                else if (spinner1.getItem(i).equals("경상남도")) {
+                } else if (spinner1.getItem(i).equals("경상남도")) {
 
                     spinner2 = ArrayAdapter.createFromResource(SignUp.this, R.array.spinner_Gyeongnam_SGG, R.layout.spinnerlayout);
                     spin2.setAdapter(spinner2);
@@ -254,9 +232,7 @@ public class SignUp extends AppCompatActivity {
                         public void onNothingSelected(AdapterView<?> adapterView) {
                         }
                     });
-                }
-
-                else if (spinner1.getItem(i).equals("경상북도")) {
+                } else if (spinner1.getItem(i).equals("경상북도")) {
 
                     spinner2 = ArrayAdapter.createFromResource(SignUp.this, R.array.spinner_Gyeongbuk_SGG, R.layout.spinnerlayout);
                     spin2.setAdapter(spinner2);
@@ -271,9 +247,7 @@ public class SignUp extends AppCompatActivity {
                         public void onNothingSelected(AdapterView<?> adapterView) {
                         }
                     });
-                }
-
-                else if (spinner1.getItem(i).equals("전라남도")) {
+                } else if (spinner1.getItem(i).equals("전라남도")) {
 
                     spinner2 = ArrayAdapter.createFromResource(SignUp.this, R.array.spinner_Jeollanam_SGG, R.layout.spinnerlayout);
                     spin2.setAdapter(spinner2);
@@ -288,9 +262,7 @@ public class SignUp extends AppCompatActivity {
                         public void onNothingSelected(AdapterView<?> adapterView) {
                         }
                     });
-                }
-
-                else if (spinner1.getItem(i).equals("전라북도")) {
+                } else if (spinner1.getItem(i).equals("전라북도")) {
 
                     spinner2 = ArrayAdapter.createFromResource(SignUp.this, R.array.spinner_Jeollabuk_SGG, R.layout.spinnerlayout);
                     spin2.setAdapter(spinner2);
@@ -305,9 +277,7 @@ public class SignUp extends AppCompatActivity {
                         public void onNothingSelected(AdapterView<?> adapterView) {
                         }
                     });
-                }
-
-                else if (spinner1.getItem(i).equals("제주도")) {
+                } else if (spinner1.getItem(i).equals("제주도")) {
 
                     spinner2 = ArrayAdapter.createFromResource(SignUp.this, R.array.spinner_Jeju_SGG, R.layout.spinnerlayout);
                     spin2.setAdapter(spinner2);
@@ -322,9 +292,7 @@ public class SignUp extends AppCompatActivity {
                         public void onNothingSelected(AdapterView<?> adapterView) {
                         }
                     });
-                }
-
-                else if (spinner1.getItem(i).equals("충청남도")) {
+                } else if (spinner1.getItem(i).equals("충청남도")) {
 
                     spinner2 = ArrayAdapter.createFromResource(SignUp.this, R.array.spinner_Chungcheongnam_SGG, R.layout.spinnerlayout);
                     spin2.setAdapter(spinner2);
@@ -339,9 +307,7 @@ public class SignUp extends AppCompatActivity {
                         public void onNothingSelected(AdapterView<?> adapterView) {
                         }
                     });
-                }
-
-                else if (spinner1.getItem(i).equals("충청북도")) {
+                } else if (spinner1.getItem(i).equals("충청북도")) {
 
                     spinner2 = ArrayAdapter.createFromResource(SignUp.this, R.array.spinner_Chungcheongbuk_SGG, R.layout.spinnerlayout);
                     spin2.setAdapter(spinner2);
@@ -487,7 +453,12 @@ public class SignUp extends AppCompatActivity {
         });
     }
 
-    ///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    public void CancelClick(View view) {
+        finish();
+    }
+
+
 
     public void btn_regist(View view) {
 
@@ -529,9 +500,9 @@ public class SignUp extends AppCompatActivity {
             return;
         }
 
-        if(!Pattern.matches("^[a-zA-Z0-9!@.#$%^&*?_~]{4,16}$", pw)) // 4자리 - 16자리까지 가능
+        if (!Pattern.matches("^[a-zA-Z0-9!@.#$%^&*?_~]{4,16}$", pw)) // 4자리 - 16자리까지 가능
         {
-            Toast.makeText(SignUp.this,"비밀번호 형식을 지켜주세요.",Toast.LENGTH_SHORT).show();
+            Toast.makeText(SignUp.this, "비밀번호 형식을 지켜주십시오.", Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -539,7 +510,7 @@ public class SignUp extends AppCompatActivity {
         finish();
     }
 
-    ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
     private void insertToDataBase(String id, String name, String pw, String pnum, String gname, String sd, String sgg) {
         class InsertData extends AsyncTask<String, Void, String> {
@@ -610,9 +581,4 @@ public class SignUp extends AppCompatActivity {
         task.execute(id, name, pw, pnum, gname, sd, sgg);
     }
 
-    /////////////////////////////////////////////////////////////////////////////////
-
-    public void CancelClick(View view) {
-        finish();
-    }
 }

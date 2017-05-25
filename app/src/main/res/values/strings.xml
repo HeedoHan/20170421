@@ -11,7 +11,13 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
-    <string-array name = "spinner_SD">
+    <string-array name="spinner_lentStatus">
+        <item>대여 가능</item>
+        <item>대여 불가</item>
+
+    </string-array>
+
+    <string-array name="spinner_SD">
         <item></item>
         <item>서울특별시</item>
         <item>인천광역시</item>
@@ -31,11 +37,11 @@
         <item>충청북도</item>
     </string-array>
 
-    <string-array name = "spinner_null_SGG">
+    <string-array name="spinner_null_SGG">
         <item></item>
     </string-array>
 
-    <string-array name = "spinner_seoul_SGG">
+    <string-array name="spinner_seoul_SGG">
         <item></item>
         <item>강남구</item>
         <item>강동구</item>
@@ -64,7 +70,7 @@
         <item>중랑구</item>
     </string-array>
 
-    <string-array name = "spinner_incheon_SGG">
+    <string-array name="spinner_incheon_SGG">
         <item></item>
         <item>강화군</item>
         <item>계양구</item>
@@ -78,7 +84,7 @@
         <item>중구</item>
     </string-array>
 
-    <string-array name = "spinner_Busan_SGG">
+    <string-array name="spinner_Busan_SGG">
         <item></item>
         <item>강서구</item>
         <item>금정구</item>
@@ -98,7 +104,7 @@
         <item>해운대구</item>
     </string-array>
 
-    <string-array name = "spinner_Daejeon_SGG">
+    <string-array name="spinner_Daejeon_SGG">
         <item></item>
         <item>대덕구</item>
         <item>동구</item>
@@ -107,7 +113,7 @@
         <item>중구</item>
     </string-array>
 
-    <string-array name = "spinner_Daegu_SGG">
+    <string-array name="spinner_Daegu_SGG">
         <item></item>
         <item>남구</item>
         <item>달서구</item>
@@ -119,7 +125,7 @@
         <item>중구</item>
     </string-array>
 
-    <string-array name = "spinner_Gwangju_SGG">
+    <string-array name="spinner_Gwangju_SGG">
         <item></item>
         <item>광산구</item>
         <item>남구</item>
@@ -128,7 +134,7 @@
         <item>서구</item>
     </string-array>
 
-    <string-array name = "spinner_Ulsan_SGG">
+    <string-array name="spinner_Ulsan_SGG">
         <item></item>
         <item>남구</item>
         <item>동구</item>
@@ -137,7 +143,7 @@
         <item>중구</item>
     </string-array>
 
-    <string-array name = "spinner_Gyeonggi_SGG">
+    <string-array name="spinner_Gyeonggi_SGG">
         <item></item>
         <item>가평군</item>
         <item>고양시 덕양구</item>
@@ -185,7 +191,7 @@
         <item>화성시</item>
     </string-array>
 
-    <string-array name = "spinner_Gangwon_SGG">
+    <string-array name="spinner_Gangwon_SGG">
         <item></item>
         <item>강릉시</item>
         <item>고성군</item>
@@ -207,7 +213,7 @@
         <item>횡성군</item>
     </string-array>
 
-    <string-array name = "spinner_Gyeongnam_SGG">
+    <string-array name="spinner_Gyeongnam_SGG">
         <item></item>
         <item>거제시</item>
         <item>거창군</item>
@@ -233,7 +239,7 @@
         <item>합천군</item>
     </string-array>
 
-    <string-array name = "spinner_Gyeongbuk_SGG">
+    <string-array name="spinner_Gyeongbuk_SGG">
         <item></item>
         <item>경산시</item>
         <item>경주시</item>
@@ -261,7 +267,7 @@
         <item>포항시 북구</item>
     </string-array>
 
-    <string-array name = "spinner_Jeollanam_SGG">
+    <string-array name="spinner_Jeollanam_SGG">
         <item></item>
         <item>강진군</item>
         <item>고흥군</item>
@@ -287,7 +293,7 @@
         <item>화순군</item>
     </string-array>
 
-    <string-array name = "spinner_Jeollabuk_SGG">
+    <string-array name="spinner_Jeollabuk_SGG">
         <item></item>
         <item>고창군</item>
         <item>군산시</item>
@@ -306,13 +312,13 @@
         <item>진안군</item>
     </string-array>
 
-    <string-array name = "spinner_Jeju_SGG">
+    <string-array name="spinner_Jeju_SGG">
         <item></item>
         <item>서귀포시</item>
         <item>제주시</item>
     </string-array>
 
-    <string-array name = "spinner_Chungcheongnam_SGG">
+    <string-array name="spinner_Chungcheongnam_SGG">
         <item></item>
         <item>계룡시</item>
         <item>공주시</item>
@@ -333,7 +339,7 @@
         <item>홍성군</item>
     </string-array>
 
-    <string-array name = "spinner_Chungcheongbuk_SGG">
+    <string-array name="spinner_Chungcheongbuk_SGG">
         <item></item>
         <item>괴산군</item>
         <item>단양군</item>

@@ -1,46 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.hanheedo.test2">
 
-    <uses-permission
-        android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:theme="@style/AppTheme"
-        android:supportsRtl="true"
-        android:label=""
+        android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
+        android:label=""
         android:roundIcon="@mipmap/ic_launcher_round"
-        android:allowBackup="true">
-
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
-            android:value="@string/facebook_app_id"/>
+            android:value="@string/facebook_app_id" />
 
-        <!--스플래쉬 액티비티-->
+        <!-- 스플래쉬 액티비티 -->
         <activity
             android:name=".Splash_activity"
-            android:theme="@style/SplashTheme"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:theme="@style/SplashTheme">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <!--메인 액티비티-->
+        <!-- 메인 액티비티 -->
         <activity
-            android:name=".LoginActivity"
-            android:label="">
-        </activity>
+            android:name=".MyItemsList"
+            android:label="" />
 
-        <!--서브 액티비티-->
-        <activity android:name=".MyItemsList"></activity>
-        <activity android:name=".AddItem"></activity>
-        <activity android:name=".SignUp"></activity>
-
+        <!-- 서브 액티비티 -->
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".AddItem" />
+        <activity android:name=".SignUp" />
     </application>
-
 
 </manifest>
